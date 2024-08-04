@@ -1,5 +1,5 @@
 {
-  "homepage": "https://AmeraSaad.github.io/React.JS_Practice/first-react-app",
+  "homepage": "https://AmeraSaad.github.io/REACT.JS_Practice/react-crud",
   "name": "react-crud",
   "version": "0.1.0",
   "private": true,
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
