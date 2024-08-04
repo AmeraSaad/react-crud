@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/REACT.JS_Practice/react-crud/static/css/main.f855e6bc.css",
+    "main.js": "/REACT.JS_Practice/react-crud/static/js/main.4534906e.js",
+    "index.html": "/REACT.JS_Practice/react-crud/index.html",
+    "main.f855e6bc.css.map": "/REACT.JS_Practice/react-crud/static/css/main.f855e6bc.css.map",
+    "main.4534906e.js.map": "/REACT.JS_Practice/react-crud/static/js/main.4534906e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.4534906e.js"
+  ]
+}
