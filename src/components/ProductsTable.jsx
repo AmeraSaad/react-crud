@@ -1,10 +1,9 @@
 
-
 function ProductsTable({products,removeProduct,editProduct}) {
   return (
     <>
     <div id="product-table-container" className="w-75 mx-auto my-5">
-      <table className="table">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th>Index</th>
