@@ -7,7 +7,6 @@ import ProductsTable from './components/ProductsTable';
 import WarningMSG from './components/WarningMSG';
 
 function App() {
-  const createId = uniqueid("prefix");
   // states
   const [products, setProducts] = useState([]);
   const [productToEdit, setProductToEdit] = useState(null);
@@ -26,7 +25,7 @@ function App() {
 
   // funcs (handlers)
   const addProduct = (product) => {
-    const newProduct = { ...product, id: createId};
+    const newProduct = { ...product, id: uniqueid("prefix")};
     const newProducts = [...products, newProduct];
     setProducts(newProducts);
     saveProductsToLocalStorage(newProducts);
