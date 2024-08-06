@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState,useEffect} from 'react';
 import uniqueid from 'uniqueid';
 import './App.css';
 import CreateProduct from './components/CreateProduct';
@@ -6,36 +6,37 @@ import SearchBar from './components/SearchBar';
 import ProductsTable from './components/ProductsTable';
 import WarningMSG from './components/WarningMSG';
 
+
 function App() {
+  const createId = uniqueid("prefix");
   // states
   const [products, setProducts] = useState([]);
   const [productToEdit, setProductToEdit] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  //effects
-
   // Load products from localStorage
   useEffect(() => {
     const savedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    console.log("Loaded products from localStorage:", savedProducts);
     setProducts(savedProducts);
   }, []);
 
-  // Save products to localStorage 
-  useEffect(() => {
-    console.log("Saving products to localStorage:", products);
+  //save data
+  const saveProductsToLocalStorage = (products) => {
     localStorage.setItem('products', JSON.stringify(products));
-  }, [products]);
+  };
 
   // funcs (handlers)
   const addProduct = (product) => {
-    const newProduct = { ...product, id: uniqueid() };
-    setProducts([...products, newProduct]);
-  }
+    const newProduct = { ...product, id: createId};
+    const newProducts = [...products, newProduct];
+    setProducts(newProducts);
+    saveProductsToLocalStorage(newProducts);
+  };
 
   const removeProduct = (id) => {
     const newProducts = products.filter(product => product.id !== id);
     setProducts(newProducts);
+    saveProductsToLocalStorage(newProducts);
   };
 
   const updateProduct = (updatedProduct) => {
@@ -43,6 +44,7 @@ function App() {
       product.id === updatedProduct.id ? updatedProduct : product
     );
     setProducts(newProducts);
+    saveProductsToLocalStorage(newProducts);
     setProductToEdit(null);
   };
 

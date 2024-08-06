@@ -1,7 +1,5 @@
-
-function ProductsTable({products,removeProduct,editProduct}) {
+function ProductsTable({ products, removeProduct, editProduct }) {
   return (
-    <>
     <div id="product-table-container" className="w-75 mx-auto my-5">
       <table className="table table-striped">
         <thead>
@@ -17,21 +15,34 @@ function ProductsTable({products,removeProduct,editProduct}) {
         </thead>
         <tbody>
           {products.map((product, index) => (
-            <tr key={product.id}>
+            <tr key={index}>
               <td>{index + 1}</td>
               <td>{product.name}</td>
               <td>{product.cat}</td>
               <td>{product.price}</td>
               <td>{product.desc}</td>
-              <td><button className="btn btn-outline-success" onClick={() => editProduct(product)}><i class="fa-solid fa-pen-to-square"></i></button></td>
-              <td><button className="btn btn-outline-danger" onClick={() => removeProduct(product.id)}><i class="fa-solid fa-trash"></i></button></td>
+              <td>
+                <button
+                  className="btn btn-outline-success"
+                  onClick={() => editProduct(product, index)}
+                >
+                  <i className="fa-solid fa-pen-to-square"></i>
+                </button>
+              </td>
+              <td>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => removeProduct(index)}
+                >
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-    </>
-  )
+  );
 }
 
-export default ProductsTable
+export default ProductsTable;
