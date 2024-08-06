@@ -21,7 +21,7 @@ function App() {
     setProducts(savedProducts);
   }, []);
 
-  // Save products to localStorage
+  // Save products to localStorage 
   useEffect(() => {
     console.log("Saving products to localStorage:", products);
     localStorage.setItem('products', JSON.stringify(products));
