@@ -1,4 +1,28 @@
+import Swal from 'sweetalert2';
+
 function ProductsTable({products,removeProduct,editProduct}) {
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeProduct(id);
+        Swal.fire(
+          'Deleted!',
+          'Your product has been deleted.',
+          'success'
+        );
+      }
+    });
+  };
+
   return (
     <>
     <div id="product-table-container" className="w-75 mx-auto my-5">
@@ -23,7 +47,7 @@ function ProductsTable({products,removeProduct,editProduct}) {
               <td>{product.price}</td>
               <td>{product.desc}</td>
               <td><button className="btn btn-outline-success" onClick={() => editProduct(product)}><i class="fa-solid fa-pen-to-square"></i></button></td>
-              <td><button className="btn btn-outline-danger" onClick={() => removeProduct(product.id)}><i class="fa-solid fa-trash"></i></button></td>
+              <td><button className="btn btn-outline-danger" onClick={() => handleDelete(product.id)}><i class="fa-solid fa-trash"></i></button></td>
             </tr>
           ))}
         </tbody>

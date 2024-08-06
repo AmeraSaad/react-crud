@@ -7,9 +7,7 @@ const CreateProduct = ({addProduct, productToEdit, updateProduct }) => {
     price: "",
     desc: "",
   });
-
-   //Use useEffect to Pre-fill the Form: When productToEdit changes,
-  // the form is pre-filled with the product's details.
+  
   useEffect(() => {
     if (productToEdit) {
       setProduct(productToEdit);
