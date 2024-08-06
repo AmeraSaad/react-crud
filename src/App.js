@@ -6,7 +6,6 @@ import SearchBar from './components/SearchBar';
 import ProductsTable from './components/ProductsTable';
 import WarningMSG from './components/WarningMSG';
 
-
 function App() {
   const createId = uniqueid("prefix");
   // states
