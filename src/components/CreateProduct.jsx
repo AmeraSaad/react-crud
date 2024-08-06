@@ -131,3 +131,4 @@ const CreateProduct = ({ addProduct, productToEdit, updateProduct }) => {
 };
 
 export default CreateProduct;
+
