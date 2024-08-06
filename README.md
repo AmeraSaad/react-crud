@@ -13,4 +13,4 @@ A simple CRUD (Create, Read, Update, Delete) system built with React.js. This pr
 
 ## Live Demo
 
-Check out the live demo of the project
+Check out the live demo of the project [here](https://react-crud-six-tan.vercel.app/).
