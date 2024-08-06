@@ -1,4 +1,5 @@
-import { useState,useEffect} from 'react';
+
+import { useState, useEffect } from 'react';
 import uniqueid from 'uniqueid';
 import './App.css';
 import CreateProduct from './components/CreateProduct';
@@ -7,7 +8,7 @@ import ProductsTable from './components/ProductsTable';
 import WarningMSG from './components/WarningMSG';
 
 function App() {
-  // states
+   // states
   const [products, setProducts] = useState([]);
   const [productToEdit, setProductToEdit] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,10 +23,10 @@ function App() {
   const saveProductsToLocalStorage = (products) => {
     localStorage.setItem('products', JSON.stringify(products));
   };
-
+  
   // funcs (handlers)
   const addProduct = (product) => {
-    const newProduct = { ...product, id: uniqueid("prefix")};
+    const newProduct = { ...product, id: uniqueid() };
     const newProducts = [...products, newProduct];
     setProducts(newProducts);
     saveProductsToLocalStorage(newProducts);
